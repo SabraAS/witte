@@ -27,7 +27,7 @@ export default function Home() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const mql = window.matchMedia("(max-width: 1280px)");
+    const mql = window.matchMedia("(max-width: 768px)");
     const onChange = () => setIsMobile(!!mql.matches);
 
     if (mql.addEventListener) {

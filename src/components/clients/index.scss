@@ -10,7 +10,7 @@
   font-family: "DM Sans", sans-serif;
   letter-spacing: 0%;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 768px) {
     height: 100%;
     padding: 40px 24px 32px;
   }
@@ -35,6 +35,9 @@
 
     @media (max-width: 1280px) {
       font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
       margin: 0px 0px 48px;
     }
 
@@ -43,6 +46,9 @@
 
       @media (max-width: 1280px) {
         font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
         margin: 32px 0px 16px;
       }
     }
@@ -88,12 +94,13 @@
     cursor: pointer;
     border: none;
     margin-bottom: 40px;
+
     a {
       text-decoration: none;
       color: #fff;
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 768px) {
       gap: 24px;
     }
   }
