@@ -1,0 +1,104 @@
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #491246;
+  background: #ECE8DE;
+  padding: 64px 120px;
+  color: #fff;
+  background-color: #491246;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0%;
+
+  @media (max-width: 1280px) {
+    height: 100%;
+    padding: 40px 24px 32px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px 0px 24px;
+
+    @media (max-width: 1280px) {
+      font-size: 12px;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 36px;
+    margin: 0px 0px 96px;
+
+    @media (max-width: 1280px) {
+      font-size: 24px;
+      margin: 0px 0px 48px;
+    }
+
+    &--bottom {
+      margin: 96px 0px 24px;
+
+      @media (max-width: 1280px) {
+        font-size: 16px;
+        margin: 32px 0px 16px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  &__button {
+    width: 181px;
+    height: 41px;
+    border-radius: 8px;
+    background-color: #EEBBB4;
+    color: #491246;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__more-clients {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 88px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 40px;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    @media (max-width: 1280px) {
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+}

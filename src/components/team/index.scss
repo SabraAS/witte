@@ -1,0 +1,98 @@
+.team {
+  background-color: #F1553A;
+  color: #fff;
+  text-align: left;
+  padding: 96px 120px;
+
+  @media (max-width: 1280px) {
+    height: 100%;
+    padding: 40px 24px 32px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    margin: 0px 0px 24px;
+
+    @media (max-width: 1280px) {
+      font-size: 12px;
+      margin: 0px 0px 16px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    max-width: 480px;
+    margin: 0px 0px 48px;
+
+    @media (max-width: 1280px) {
+      font-size: 16px;
+      margin: 0px 0px 24px;
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 72px;
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    max-width: 360px;
+
+    @media (max-width: 1280px) {
+      max-width: 100%;
+    }
+  }
+
+  &__carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    gap: 24px;
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 0px;
+    }
+  }
+
+  &__carousel-button {
+    background-color: transparent;
+    border: none;
+    color: #491246;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 120%;
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+  }
+}
