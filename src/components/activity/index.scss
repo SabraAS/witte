@@ -1,0 +1,35 @@
+.activity {
+  background-color: #fff;
+  padding: 32px 40px;
+  border-radius: 16px;
+  min-height: 500px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  color: #491246;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0%;
+
+  @media (max-width: 768px) {
+    padding: 40px 24px 32px;
+    max-width: fit-content;
+    min-width: fit-content;
+    height: 100%;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    margin: 8px 0px 24px 0px;
+  }
+
+  &__content {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    margin: 0px;
+  }
+}

@@ -1,0 +1,9 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<rect width="56" height="56" rx="28" fill="#F1563A"/>
+<g id="envelope">
+<path id="Vector" d="M38.666 38.6666H17.3327C15.866 38.6666 14.666 37.4666 14.666 36V20C14.666 18.5333 15.866 17.3333 17.3327 17.3333H38.666C40.1327 17.3333 41.3327 18.5333 41.3327 20V36C41.3327 37.4666 40.1327 38.6666 38.666 38.6666Z" stroke="#ECE8DE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M38.666 17.3333H17.3327C15.866 17.3333 14.666 18.5333 14.666 20L27.9993 29.3333L41.3327 20C41.3327 18.5333 40.1327 17.3333 38.666 17.3333Z" stroke="#ECE8DE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+</g>
+</g>
+</svg>
