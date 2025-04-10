@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from "react";
-const TeamMember = ({ img, name, description, text, linkedin, site, invert, setShowMore, fullScreen, isMobile }) => {
+const TeamMember = ({ img, name, description, text, linkedin, site, invert, setShowMore, fullScreen, isMobile, showAllSocials }) => {
   const [showMoreMobile, setShowMoreMobile] = useState(false);
 
   const handleShowMore = () => {
@@ -25,29 +25,36 @@ const TeamMember = ({ img, name, description, text, linkedin, site, invert, setS
 
         <p className={`team-member__text ${!fullScreen ? 'team-member__text--clip' : ''} ${showMoreMobile ? 'team-member__text--mobile' : ''}`}>{text}</p>
 
-        <div className={`team-member__social ${fullScreen ? 'team-member__social--full' : ''}`}>
+        <div className={`team-member__socials ${fullScreen ? 'team-member__socials--full' : ''}`}>
         {fullScreen ?
           <>
-            <a className="team-member__social-site" href={linkedin} target="_blank" rel="noopener noreferrer">
-              Site
-            </a>
-            <a className="team-member__social-linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
+            <a className="team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
+            </a>
+            <a className="team-member__social--site" href={site || linkedin} target="_blank" rel="noopener noreferrer">
+              Site
             </a>
           </>
           :
-        <>
-          <button className="team-member__social-more" onClick={handleShowMore}>{isMobile ? (showMoreMobile ? 'Saiba menos' : 'Saiba mais') : <a href="#equipe">Saiba mais</a>}</button>
-            <a className="team-member__social-linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
+          <>
+            <button className="team-member__social--more" onClick={handleShowMore}>{isMobile ? (showMoreMobile ? 'Saiba menos' : 'Saiba mais') : <a href="#equipe">Saiba mais</a>}</button>
+            <a className="team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
+            {showAllSocials &&
+              <>
+                <a className="team-member__social--site" href={site || linkedin} target="_blank" rel="noopener noreferrer">
+                  Site
+                </a>
+              </>
+            }
           </>
         }
         </div>
 
         {fullScreen &&
           <button className="team-member__close" onClick={() => setShowMore()}>
-              <Image fill src={'/arrow-left.svg'} alt="voltar" /> Voltar
+            <Image fill src={'/arrow-left.svg'} alt="voltar" /> Voltar
           </button>
         }
       </div>
