@@ -13,10 +13,9 @@
   letter-spacing: 0%;
 
   @media (max-width: 768px) {
-    padding: 40px 24px 32px;
+    padding: 40px 24px;
     max-width: fit-content;
     min-width: fit-content;
-    height: 100%;
   }
 
   &__title {

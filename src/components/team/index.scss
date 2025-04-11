@@ -2,11 +2,12 @@
   background-color: #F1553A;
   color: #fff;
   text-align: left;
-  padding: 96px 120px;
+  padding: 72px 120px;
+  scroll-margin-top: 92px;
 
   @media (max-width: 768px) {
-    height: 100%;
-    padding: 40px 24px 32px;
+    scroll-margin-top: 72px;
+    padding: 40px 24px;
   }
 
   &__title {
@@ -54,7 +55,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 1em;
     margin-bottom: 72px;
 
     @media (max-width: 768px) {
@@ -78,7 +79,7 @@
     justify-content: space-between;
     width: 100%;
     max-width: 100%;
-    gap: 24px;
+    gap: 1em;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -92,15 +93,13 @@
   &__carousel-button {
     background-color: transparent;
     border: none;
-    color: #491246;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 120%;
-    font-family: "DM Sans", sans-serif;
-    letter-spacing: 0%;
-    text-transform: uppercase;
     cursor: pointer;
-    width: 3rem;
-    height: 3rem;
+    width: 48px;
+    height: 48px;
+
+    @media (max-width: 1280px) {
+      width: 32px;
+      height: 32px;
+    }
   }
 }

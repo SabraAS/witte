@@ -17,8 +17,12 @@
     justify-content: left;
 
     &--full {
-      max-width: 100%;
-      margin: 0px 80px 0px 0px;
+      max-width: 60%;
+      margin-right: 80px;
+
+      @media (max-width: 1280px) {
+        margin-right: 24px;
+      }
     }
   }
 
@@ -79,8 +83,7 @@
       border-radius: 48px 48px 0px 48px;
     }
     &--full {
-      width: 399px;
-      height: 480px;
+      min-width: 25%;
     }
 
     @media (max-width: 768px) {
@@ -93,7 +96,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     &--full {
       margin-bottom: 96px;
     }
@@ -127,6 +129,22 @@
       text-decoration: none;
       color: #491246;
       cursor: pointer;
+
+      @media (max-width: 1280px) and (min-width: 769px) {
+        display: none;
+      }
+    }
+
+    &--site-full {
+      padding-left: 16px;
+      border: none;
+      border-left: 1px solid #A45369;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      text-decoration: none;
+      color: #491246;
+      cursor: pointer;
     }
 
     &--linkedin {
@@ -136,6 +154,21 @@
       text-decoration: none;
       color: #491246;
       cursor: pointer;
+      padding: 0px 16px;
+    }
+
+    &--linkedin-full {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      text-decoration: none;
+      color: #491246;
+      cursor: pointer;
+      padding-right: 16px;
+    }
+
+    @media (max-width: 1280px) {
+      font-size: 16px;
     }
   }
 
@@ -154,9 +187,13 @@
     justify-content: center;
     gap: 8px;
 
+    @media (max-width: 1280px) {
+      font-size: 16px;
+    }
+
     img {
-      width: 24px;
-      height: 24px;
+      width: 24px !important;
+      height: 24px !important;
     }
   }
 }

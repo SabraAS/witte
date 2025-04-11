@@ -23,7 +23,7 @@
     width: 100%;
 
     @media (max-width: 768px) {
-      min-height: 72px;
+      height: 72px;
     }
   }
 
@@ -60,7 +60,7 @@
       color: #fff;
     }
 
-    &--main {
+    &--desktop {
       @media (max-width: 768px) {
         display: none;
       }
@@ -72,8 +72,8 @@
       justify-content: space-between;
       left: 0;
       right: 0;
-      top: 92px;
-      padding: 0px 20px 16px;
+      top: 72px;
+      padding: 16px 20px;
       position: absolute;
       z-index: 100;
       @media (min-width: 769px) {
