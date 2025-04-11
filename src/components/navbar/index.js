@@ -23,9 +23,11 @@ const Navbar = ({ isMobile }) => {
     }
   }, [isMobile]);
 
-  window.onscroll = () => {
-    setIsMenuOpen(false);
-  };
+  useEffect(() => {
+    window.onscroll = () => {
+      setIsMenuOpen(false);
+    };
+  });
 
   return (
     <header className="navbar">
