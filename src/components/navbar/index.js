@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Links = ({ isMobile }) => {
   return (
-    <div className={`navbar__links navbar__links--${isMobile ? 'mobile' : 'main'}`}>
+    <div className={`navbar__links navbar__links--${isMobile ? 'mobile' : 'desktop'}`}>
       <div className="navbar__links-item" onClick={() => window.location.href = '#servicos'}>
         <span>Serviços</span>
         <Image fill src={"/arrow.svg"} className="navbar__links-icon" alt="arrow down" />
@@ -22,6 +22,10 @@ const Navbar = ({ isMobile }) => {
       setIsMenuOpen(false);
     }
   }, [isMobile]);
+
+  window.onscroll = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="navbar">

@@ -60,7 +60,7 @@
       color: #fff;
     }
 
-    &--main {
+    &--desktop {
       @media (max-width: 768px) {
         display: none;
       }
@@ -73,7 +73,7 @@
       left: 0;
       right: 0;
       top: 92px;
-      padding: 0px 20px 16px;
+      padding: 16px 20px;
       position: absolute;
       z-index: 100;
       @media (min-width: 769px) {
