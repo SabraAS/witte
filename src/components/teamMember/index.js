@@ -28,22 +28,22 @@ const TeamMember = ({ img, name, description, text, linkedin, site, invert, setS
         <div className={`team-member__socials ${fullScreen ? 'team-member__socials--full' : ''}`}>
         {fullScreen ?
           <>
-            <a className="team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
+            <a className="team-member__social team-member__social--linkedin-full" href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a className="team-member__social--site" href={site || linkedin} target="_blank" rel="noopener noreferrer">
+            <a className="team-member__social team-member__social--site-full" href={site || linkedin} target="_blank" rel="noopener noreferrer">
               Site
             </a>
           </>
           :
           <>
-            <button className="team-member__social--more" onClick={handleShowMore}>{isMobile ? (showMoreMobile ? 'Saiba menos' : 'Saiba mais') : <a href="#equipe">Saiba mais</a>}</button>
-            <a className="team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
+            <button className="team-member__social team-member__social--more" onClick={handleShowMore}>{isMobile ? (showMoreMobile ? 'Saiba menos' : 'Saiba mais') : <a href="#equipe">Saiba mais</a>}</button>
+            <a className="team-member__social team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
             {showAllSocials &&
               <>
-                <a className="team-member__social--site" href={site || linkedin} target="_blank" rel="noopener noreferrer">
+                <a className="team-member__social team-member__social--site" href={site || linkedin} target="_blank" rel="noopener noreferrer">
                   Site
                 </a>
               </>

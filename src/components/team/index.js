@@ -129,7 +129,7 @@ const Team = ({ isMobile }) => {
                 ))}
                 {firstPosition + 3 < otherMembers.length &&
                   <button
-                  className="team__carousel-button team__carousel-button--next"
+                  className="team__carousel-button"
                   type="button"
                   onClick={() => setFirstPosition(firstPosition + 1)}>
                     <Image fill src={'/arrow-right.svg'} alt="avançar" />

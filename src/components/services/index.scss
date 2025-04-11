@@ -1,12 +1,12 @@
 .services {
   background-color: #fff;
-  padding: 72px 168px;
+  padding: 72px 120px;
+  scroll-margin-top: 92px;
   color: #491246;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  scroll-margin-top: 92px;
 
   @media (max-width: 768px) {
     height: 100%;
@@ -37,14 +37,11 @@
     font-size: 14px;
     line-height: 160%;
     max-width: 720px;
-    margin: 0px 0px 32px;
+    margin: 0px 0px 56px;
     text-align: center;
 
     @media (max-width: 1280px) {
       font-size: 16px;
-    }
-
-    @media (max-width: 768px) {
       max-width: 100%;
     }
 
@@ -52,6 +49,8 @@
       font-size: 36px;
       font-weight: 600;
       margin: 0px 0px 16px;
+      line-height: 100%;
+      margin: 0px 0px 24px;
 
       @media (max-width: 1280px) {
         font-size: 24px;
@@ -72,8 +71,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    gap: 24px;
-    row-gap: 80px;
+    gap: 80px;
     flex-wrap: wrap;
 
     @media (max-width: 768px) {
@@ -122,6 +120,7 @@
     font-size: 12px;
     line-height: 120%;
     letter-spacing: 0%;
+    margin: 0px 0px 24px;
   }
 
   &__item-title {
