@@ -6,8 +6,8 @@
   scroll-margin-top: 92px;
 
   @media (max-width: 768px) {
-    height: 100%;
-    padding: 40px 24px 32px;
+    scroll-margin-top: 72px;
+    padding: 40px 24px;
   }
 
   &__title {
