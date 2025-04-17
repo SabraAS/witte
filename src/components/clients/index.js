@@ -415,7 +415,7 @@ const Clients = () => {
         </p>
         {showMoreClients && (
           <div className="clients__more-clients">
-            <div className="clients__more-clients__group">
+            <div className="clients__group">
               {otherClients1.map((client) => (
                 <div className="clients__item" key={client.name}>
                   <a href={client.url} target="_blank" rel="noopener noreferrer">
@@ -424,7 +424,7 @@ const Clients = () => {
                 </div>
               ))}
             </div>
-            <div className="clients__more-clients__group">
+            <div className="clients__group">
               {otherClients2.map((client) => (
                 <div className="clients__item" key={client.name}>
                   <a href={client.url} target="_blank" rel="noopener noreferrer">
@@ -433,7 +433,7 @@ const Clients = () => {
                 </div>
               ))}
             </div>
-            <div className="clients__more-clients__group">
+            <div className="clients__group">
               {otherClients3.map((client) => (
                 <div className="clients__item" key={client.name}>
                   <a href={client.url} target="_blank" rel="noopener noreferrer">
@@ -442,7 +442,7 @@ const Clients = () => {
                 </div>
               ))}
             </div>
-            <div className="clients__more-clients__group">
+            <div className="clients__group">
               {otherClients4.map((client) => (
                 <div className="clients__item" key={client.name}>
                   <a href={client.url} target="_blank" rel="noopener noreferrer">
