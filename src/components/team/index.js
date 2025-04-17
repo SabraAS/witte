@@ -56,8 +56,8 @@ const otherMembers = [
     name: 'GEP Compliance',
     description: 'empresa parceira',
     text: 'A GEP é a consultoria líder do mercado na implementação de projetos e soluções nas áreas de Privacidade e Proteção de Dados Pessoais, Integridade Empresarial, Compliance, Gestão de Riscos, Governança Corporativa e ESG.',
-    linkedin: 'https://www.gepcompliance.com.br/',
-    site: 'https://www.linkedin.com/company/gep-solucoes-em-compliance/',
+    linkedin: 'https://www.linkedin.com/company/gep-solucoes-em-compliance/',
+    site: 'https://www.gepcompliance.com.br/',
   },
 ]
 
@@ -91,56 +91,58 @@ const Team = ({ isMobile }) => {
 
   return (
     <section className="team" id="equipe">
-      <h2 className="team__title">Equipe</h2>
-      {!showMore ? (
-        <>
-          <p className="team__text">
-            Nos orgulhamos em fomentar a troca, a criação de comunidades e hoje contamos com uma excelente equipe e uma extensa rede de parceiros para auxiliar nos mais diversos escopos de atuação.
-          </p>
-          <div className="team__content">
-            {mainMembers.map((member) => (
-              <div className="team__item" key={member.name}>
-                <TeamMember {...member} isMobile={isMobile} setShowMore={(member) => setShowMore(member)} />
-              </div>
-            ))}
-          </div>
-          {isWide || isMobile ? 
-            <div className="team__carousel">
-              {otherMembers.map((member) => (
+      <div className="team__content">
+        <h2 className="team__title">Equipe</h2>
+        {!showMore ? (
+          <>
+            <p className="team__description">
+              Nos orgulhamos em fomentar a troca, a criação de comunidades e hoje contamos com uma excelente equipe e uma extensa rede de parceiros para auxiliar nos mais diversos escopos de atuação.
+            </p>
+            <div className="team__items">
+              {mainMembers.map((member) => (
                 <div className="team__item" key={member.name}>
-                  <TeamMember {...member} isMobile={isMobile} showAllSocials={true} setShowMore={(member) => setShowMore(member)} />
+                  <TeamMember {...member} isMobile={isMobile} setShowMore={(member) => setShowMore(member)} />
                 </div>
               ))}
-            </div> 
-            :
+            </div>
+            {isWide || isMobile ? 
               <div className="team__carousel">
-                {firstPosition > 0 &&
-                  <button
-                  className="team__carousel-button team__carousel-button--previous"
-                  type="button"
-                  onClick={() => setFirstPosition(firstPosition - 1)}>
-                    <Image fill src={'/arrow-left.svg'} alt="voltar" />
-                  </button>
-                }
-                {otherMembers.slice(firstPosition, firstPosition + 3).map((member) => (
+                {otherMembers.map((member) => (
                   <div className="team__item" key={member.name}>
-                    <TeamMember {...member} showAllSocials={true} setShowMore={(member) => setShowMore(member)} />
+                    <TeamMember {...member} isMobile={isMobile} showAllSocials={true} setShowMore={(member) => setShowMore(member)} />
                   </div>
                 ))}
-                {firstPosition + 3 < otherMembers.length &&
-                  <button
-                  className="team__carousel-button"
-                  type="button"
-                  onClick={() => setFirstPosition(firstPosition + 1)}>
-                    <Image fill src={'/arrow-right.svg'} alt="avançar" />
-                  </button>
-                }
-              </div>
-            }
-        </>
-      ) : (
-        <TeamMember {...showMore} fullScreen setShowMore={() => setShowMore()} />
-      )}
+              </div> 
+              :
+                <div className="team__carousel">
+                  {firstPosition > 0 &&
+                    <button
+                    className="team__carousel-button team__carousel-button--previous"
+                    type="button"
+                    onClick={() => setFirstPosition(firstPosition - 1)}>
+                      <Image fill src={'/arrow-left.svg'} alt="voltar" />
+                    </button>
+                  }
+                  {otherMembers.slice(firstPosition, firstPosition + 3).map((member) => (
+                    <div className="team__item" key={member.name}>
+                      <TeamMember {...member} showAllSocials={true} setShowMore={(member) => setShowMore(member)} />
+                    </div>
+                  ))}
+                  {firstPosition + 3 < otherMembers.length &&
+                    <button
+                    className="team__carousel-button"
+                    type="button"
+                    onClick={() => setFirstPosition(firstPosition + 1)}>
+                      <Image fill src={'/arrow-right.svg'} alt="avançar" />
+                    </button>
+                  }
+                </div>
+              }
+          </>
+        ) : (
+          <TeamMember {...showMore} fullScreen setShowMore={() => setShowMore()} />
+        )}
+      </div>
     </section>
   );
 };

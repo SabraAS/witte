@@ -1,19 +1,25 @@
 .clients {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #491246;
-  background: #ECE8DE;
-  padding: 72px 120px;
-  scroll-margin-top: 92px;
-  color: #fff;
+  justify-content: center;
   background-color: #491246;
-  font-family: "DM Sans", sans-serif;
-  letter-spacing: 0%;
 
-  @media (max-width: 768px) {
-    scroll-margin-top: 72px;
-    padding: 40px 24px;
+  &__content {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 72px 120px;
+    scroll-margin-top: 92px;
+    color: #fff;
+    background-color: #491246;
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 0%;
+
+    @media (max-width: 768px) {
+      scroll-margin-top: 72px;
+      padding: 40px 24px;
+    }
   }
 
   &__title {
@@ -29,7 +35,7 @@
     }
   }
 
-  &__text {
+  &__description {
     font-weight: 600;
     font-size: 36px;
     margin: 0px 0px 96px;
@@ -40,7 +46,7 @@
     }
 
     &--bottom {
-      margin: 96px 0px 24px;
+      margin: 96px 0px 48px;
 
       @media (max-width: 1280px) {
         font-size: 16px;
@@ -52,12 +58,20 @@
     }
   }
 
-  &__content {
+  &__items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 24px;
+
+    @media (max-width: 1280px) {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
   }
 
   &__button {
@@ -91,7 +105,7 @@
     color: #fff;
     cursor: pointer;
     border: none;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 
     a {
       text-decoration: none;
@@ -101,9 +115,5 @@
     @media (max-width: 768px) {
       gap: 24px;
     }
-  }
-
-  &__item {
-    cursor: pointer;
   }
 }

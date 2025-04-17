@@ -1,16 +1,23 @@
 .activity-areas {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #491246;
+  justify-content: center;
   background: #ECE8DE;
-  padding: 72px 120px;
-  scroll-margin-top: 92px;
-  flex-wrap: wrap;
 
-  @media (max-width: 768px) {
-    scroll-margin-top: 72px;
-    padding: 40px 24px;
+  &__content {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #491246;
+    padding: 72px 120px;
+    scroll-margin-top: 92px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      scroll-margin-top: 72px;
+      padding: 40px 24px;
+    }
   }
 
   &__title {
@@ -27,7 +34,7 @@
     }
   }
 
-  &__texts {
+  &__info {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -63,7 +70,7 @@
     max-width: 450px;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: left;
@@ -89,7 +96,7 @@
     }
   }
 
-  &__content {
+  &__activities {
     display: flex;
     flex-direction: row;
     justify-content: center;
