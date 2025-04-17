@@ -391,7 +391,7 @@ const otherClients4 = [
   { name: "Zoony",	url: "https://21212.com/blog/zoony-an-online-platform-connecting-students-with-their-dream-internships/"},
 ];
 
-const Clients = () => {
+const Clients = ({ isMobile }) => {
   const [showMoreClients, setShowMoreClients] = useState(false);
 
   return (
@@ -399,7 +399,7 @@ const Clients = () => {
       <div className="clients__content">
         <h3 className="clients__title">Clientes</h3>
         <p className="clients__description">
-          Mais de 300 empresas contam com a gente.
+        {isMobile ? 'Quem conta com a gente' : 'Mais de 300 empresas contam com a gente.'}
         </p>
         <div className="clients__items">
           {mainClients.map((client) => (

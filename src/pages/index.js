@@ -57,7 +57,7 @@ export default function Home() {
         <main>
           <Hero />
           <ActivityAreas />
-          <Clients />
+          <Clients isMobile={isMobile} />
           <Services isMobile={isMobile} />
           <Team isMobile={isMobile} />
           <Contact />
