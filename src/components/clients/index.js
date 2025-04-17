@@ -391,68 +391,70 @@ const otherClients4 = [
   { name: "Zoony",	url: "https://21212.com/blog/zoony-an-online-platform-connecting-students-with-their-dream-internships/"},
 ];
 
-const Clients = () => {
+const Clients = ({ isMobile }) => {
   const [showMoreClients, setShowMoreClients] = useState(false);
 
   return (
     <section className="clients" id="clientes">
-      <h3 className="clients__title">Clientes</h3>
-      <p className="clients__text">
-        Mais de 300 empresas contam com a gente.
-      </p>
       <div className="clients__content">
-        {mainClients.map((client) => (
-          <div className="clients__item" key={client.name}>
-            <Image fill src={client.logo} alt={client.name} onClick={() => {
-                window.open(client.url, '_blank');
-              }} />
-          </div>
-        ))}
-      </div>
-      <p className="clients__text clients__text--bottom">
-        E muito mais
-      </p>
-      {showMoreClients && (
-        <div className="clients__more-clients">
-          <div className="clients__more-clients__group">
-            {otherClients1.map((client) => (
-              <div className="clients__item" key={client.name}>
-                <a href={client.url} target="_blank" rel="noopener noreferrer">
-                {client.name}
-              </a>
-              </div>
-            ))}
-          </div>
-          <div className="clients__more-clients__group">
-            {otherClients2.map((client) => (
-              <div className="clients__item" key={client.name}>
-                <a href={client.url} target="_blank" rel="noopener noreferrer">
-                  {client.name}
-                </a>
-              </div>
-            ))}
-          </div>
-          <div className="clients__more-clients__group">
-            {otherClients3.map((client) => (
-              <div className="clients__item" key={client.name}>
-                <a href={client.url} target="_blank" rel="noopener noreferrer">
-                  {client.name}
-                </a>
-              </div>
-            ))}
-          </div>
-          <div className="clients__more-clients__group">
-            {otherClients4.map((client) => (
-              <div className="clients__item" key={client.name}>
-                <a href={client.url} target="_blank" rel="noopener noreferrer">
-                  {client.name}
-                </a>
-              </div>
-            ))}
-          </div>
+        <h3 className="clients__title">Clientes</h3>
+        <p className="clients__description">
+        {isMobile ? 'Quem conta com a gente' : 'Mais de 300 empresas contam com a gente.'}
+        </p>
+        <div className="clients__items">
+          {mainClients.map((client) => (
+            <div className="clients__item" key={client.name}>
+              <Image fill src={client.logo} alt={client.name} onClick={() => {
+                  window.open(client.url, '_blank');
+                }} />
+            </div>
+          ))}
         </div>
-      )}
-      <button className="clients__button" onClick={() => setShowMoreClients(!showMoreClients)}>{showMoreClients ? "Ver menos" : "Conheça"}</button>
+        <p className="clients__description clients__description--bottom">
+          E muito mais
+        </p>
+        {showMoreClients && (
+          <div className="clients__more-clients">
+            <div className="clients__group">
+              {otherClients1.map((client) => (
+                <div className="clients__item" key={client.name}>
+                  <a href={client.url} target="_blank" rel="noopener noreferrer">
+                  {client.name}
+                </a>
+                </div>
+              ))}
+            </div>
+            <div className="clients__group">
+              {otherClients2.map((client) => (
+                <div className="clients__item" key={client.name}>
+                  <a href={client.url} target="_blank" rel="noopener noreferrer">
+                    {client.name}
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div className="clients__group">
+              {otherClients3.map((client) => (
+                <div className="clients__item" key={client.name}>
+                  <a href={client.url} target="_blank" rel="noopener noreferrer">
+                    {client.name}
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div className="clients__group">
+              {otherClients4.map((client) => (
+                <div className="clients__item" key={client.name}>
+                  <a href={client.url} target="_blank" rel="noopener noreferrer">
+                    {client.name}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        <button className="clients__button" onClick={() => setShowMoreClients(!showMoreClients)}>{showMoreClients ? "Ver menos" : "Conheça"}</button>
+      </div>
     </section>
   );
 };

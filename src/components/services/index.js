@@ -195,51 +195,65 @@ const servicos = [
 
 const Services = ({ isMobile }) => {
   const [activeService, setActiveService] = useState(null);
+
+  const handleServiceClick = (index) => {
+    if (index === null || index === undefined || index === activeService) {
+      return setActiveService(null)
+    }
+    setActiveService(index)
+    if (!isMobile) {
+      window.location.href = '#servicos'
+    }
+  };
+
   return (
     <section className="services" id="servicos">
-      <h3 className="services__title">Serviços</h3>
-      <p className="services__text services__text--big">
-        Temos uma solução para cada momento da jornada da sua empresa
-      </p>
-      <p className="services__text">
-        Empresas Strong-up: Apoiamos negócios desde a sua fundação, expansão, M&A, rodadas de investimento e em toda a sua jornada. Nossa missão é criar as condições para que sua empresa possa se desenvolver sobre uma base sólida, porque &quot;Start&quot; é só o primeiro passo. 
-      </p>
       <div className="services__content">
-        {activeService !== null && 
-          <div className={'services__item services__item--active services__item--desktop'}>
-            <h4 className="services__item-number">{activeService+1 < 10 ? `0${activeService+1}` : activeService+1}</h4>
-            <h4 className="services__item-title">{servicos[activeService].title}</h4>
-            <p className="services__item-content">{servicos[activeService].content}</p>
-            <div className="services__item-content">
-              {servicos[activeService].extra.map((extra, index) => (
-                <p key={index}>{extra}</p>
-              ))}
+        <h3 className="services__title">Serviços</h3>
+        <p className="services__description services__description--big">
+          Temos uma solução para cada momento da jornada da sua empresa
+        </p>
+        <p className="services__description">
+          Empresas Strong-up: Apoiamos negócios desde a sua fundação, expansão, M&A, rodadas de investimento e em toda a sua jornada. Nossa missão é criar as condições para que sua empresa possa se desenvolver sobre uma base sólida, porque &quot;Start&quot; é só o primeiro passo. 
+        </p>
+        <div className="services__all-items">
+          {activeService !== null && !isMobile && 
+            <div className={'services__item services__item--active services__item--desktop'}>
+              <h4 className="services__item-number">{activeService+1 < 10 ? `0${activeService+1}` : activeService+1}</h4>
+              <h4 className="services__item-title">{servicos[activeService].title}</h4>
+              <p className="services__item-content">{servicos[activeService].content}</p>
+              <div className="services__item-content">
+                {servicos[activeService].extra.map((extra, index) => (
+                  <p key={index}>{extra}</p>
+                ))}
+              </div>
+              <button className={'services__item-button'} onClick={() => setActiveService(null)}>Ver todos os serviços</button>
             </div>
-            <button className={'services__item-button'} onClick={() => setActiveService(null)}>Ver todos os serviços</button>
-          </div>
-        }
+          }
 
-        <div className="services__itens">
-          {servicos.map((service, index) => (
-            <div className={`services__item ${activeService === index ? 'services__item--disabled' : ''}`} key={index}>
-              <h4 className="services__item-number">{index+1 < 10 ? `0${index+1}` : index+1}</h4>
-              <h4 className="services__item-title">{service.title}</h4>
-              <p className="services__item-content">{service.content}</p>
-              <button
-                className={`services__item-button ${activeService === index ? 'services__item-button--disabled' : ''}`}
-                onClick={() => isMobile && activeService !== null ? setActiveService(null) : setActiveService(index)}
-              >
-                {isMobile && activeService !== null && activeService === index ? 'Saiba menos' : 'Saiba mais'}
-              </button>
-              {isMobile && activeService !== null && activeService === index && (
-                <div className="services__item-content services__item-content--mobile">
-                  {servicos[activeService].extra.map((extra, index) => (
-                    <p key={index}>{extra}</p>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+          <div className="services__items">
+            {servicos.map((service, index) => (
+              <div className={`services__item ${activeService === index && !isMobile ? 'services__item--disabled' : ''}`} key={index}>
+                <h4 className="services__item-number">{index+1 < 10 ? `0${index+1}` : index+1}</h4>
+                <h4 className="services__item-title">{service.title}</h4>
+                <p className="services__item-content">{service.content}</p>
+                <button
+                  className={`services__item-button ${activeService === index ? 'services__item-button--less' : ''}`}
+                  disabled={activeService === index && !isMobile}
+                  onClick={() => handleServiceClick(index)}
+                >
+                  {isMobile && activeService !== null && activeService === index ? 'Saiba menos' : 'Saiba mais'}
+                </button>
+                {isMobile && activeService !== null && activeService === index && (
+                  <div className="services__item-content services__item-content--mobile">
+                    {servicos[activeService].extra.map((extra, index) => (
+                      <p key={index}>{extra}</p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

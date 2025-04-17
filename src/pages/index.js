@@ -49,15 +49,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="icon" href="/logo.svg" />
-        <title>witte</title>
+        <link rel="icon" href="/LOGO.svg" />
+        <title>Witte Advogados</title>
       </Head>
       <div className={`${sora.variable} ${dmSans.variable} font-sans`}>
         <Navbar isMobile={isMobile} />
         <main>
           <Hero />
           <ActivityAreas />
-          <Clients />
+          <Clients isMobile={isMobile} />
           <Services isMobile={isMobile} />
           <Team isMobile={isMobile} />
           <Contact />
