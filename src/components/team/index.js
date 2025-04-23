@@ -90,12 +90,12 @@ const Team = ({ isMobile }) => {
   }, []);
 
   return (
-    <section className="team" id="equipe">
+    <section className="team section" id="equipe">
       <div className="team__content">
-        <h2 className="team__title">Equipe</h2>
+        <h2 className="section__title">Equipe</h2>
         {!showMore ? (
           <>
-            <p className="team__description">
+            <p className="team__description section__description section__description--small">
               Nos orgulhamos em fomentar a troca, a criação de comunidades e hoje contamos com uma excelente equipe e uma extensa rede de parceiros para auxiliar nos mais diversos escopos de atuação.
             </p>
             <div className="team__items">

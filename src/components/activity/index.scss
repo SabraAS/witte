@@ -9,7 +9,6 @@
   justify-content: left;
   text-align: left;
   color: #491246;
-  font-family: "DM Sans", sans-serif;
   letter-spacing: 0%;
 
   @media (max-width: 768px) {
@@ -18,11 +17,17 @@
     min-width: fit-content;
   }
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0px 0px 24px;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
-    margin: 8px 0px 24px 0px;
   }
 
   &__content {

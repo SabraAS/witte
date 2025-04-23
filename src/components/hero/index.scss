@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-
+  
   &__content {
     max-width: 1440px;
     width: 100%;
@@ -59,7 +59,7 @@
   &__title {
     font-family: "Sora", sans-serif;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 120%;
     letter-spacing: 0%;
     text-align: left;
@@ -71,7 +71,6 @@
   }
 
   &__description {
-    font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;
@@ -106,7 +105,6 @@
     border-radius: 8px;
     background-color: #491246;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
@@ -156,8 +154,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
-
-    font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;

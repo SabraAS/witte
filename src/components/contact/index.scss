@@ -2,7 +2,7 @@
   background-color: #ECE8DE;
   display: flex;
   justify-content: center;
-
+  
   &__content {
     max-width: 1440px;
     width: 100%;
@@ -24,30 +24,7 @@
     }
   }
 
-  &__title {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0px 0px 24px;
-    text-transform: uppercase;
-
-    @media (max-width: 1280px) {
-      font-size: 12px;
-    }
-
-    @media (max-width: 768px) {
-      margin: 0px 0px 16px;
-    }
-  }
-
   &__description {
-    font-size: 36px;
-    font-weight: 600;
-    margin: 0px;
-
-    @media (max-width: 1280px) {
-      font-size: 24px;
-    }
-
     @media (max-width: 768px) {
       margin: 0px 0px 32px;
     }
@@ -74,7 +51,6 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
-    font-family: "DM Sans", sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 140%;

@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 const Contact = () => {
   return (
-    <section className="contact">
+    <section className="contact section">
       <div className="contact__content">
         <div>
-          <p className="contact__title">Vamos conversar</p>
-          <p className="contact__description">
+          <p className="section__title">Vamos conversar</p>
+          <p className="contact__description section__description">
             Entre em contato
           </p>
         </div>
