@@ -403,11 +403,9 @@ const Clients = ({ isMobile }) => {
         </p>
         <div className="clients__items">
           {mainClients.map((client) => (
-            <div className="clients__item" key={client.name}>
-              <Image fill src={client.logo} alt={client.name} onClick={() => {
-                  window.open(client.url, '_blank');
-                }} />
-            </div>
+            <Image className="clients__image" key={client.name} fill src={client.logo} alt={client.name} onClick={() => {
+                window.open(client.url, '_blank');
+              }} />
           ))}
         </div>
         <p className="clients__description clients__description--bottom section__description">

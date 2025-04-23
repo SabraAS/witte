@@ -41,12 +41,10 @@ const TeamMember = ({ img, name, description, text, linkedin, site, invert, setS
             <a className="team-member__social team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            {showAllSocials || isMobile &&
-              <>
-                <a className="team-member__social team-member__social--site" href={site || linkedin} target="_blank" rel="noopener noreferrer">
-                  Site
-                </a>
-              </>
+            {(showAllSocials || isMobile) &&
+              <a className="team-member__social team-member__social--site-full" href={site || linkedin} target="_blank" rel="noopener noreferrer">
+                Site
+              </a>
             }
           </>
         }
