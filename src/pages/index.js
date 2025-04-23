@@ -51,8 +51,9 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/LOGO.svg" />
         <title>Witte Advogados</title>
+        <meta name="color-scheme" content="only light" />
       </Head>
-      <div className={`${sora.variable} ${dmSans.variable} font-sans`}>
+      <div className={`home ${sora.variable} ${dmSans.variable}`}>
         <Navbar isMobile={isMobile} />
         <main>
           <Hero />

@@ -1,18 +1,18 @@
 import Activity from "../activity";
 const ActivityAreas = () => {
   return (
-    <section className="activity-areas">
+    <section className="activity-areas section">
       <div className="activity-areas__content">
-        <h3 className="activity-areas__title">Áreas de atuação</h3>
+        <h3 className="section__title">Áreas de atuação</h3>
         <div className="activity-areas__info">
-          <p className="activity-areas__text activity-areas__text--big">
+          <p className="activity-areas__text section__description section__description--big">
             Nossa expertise a serviço da sua empresa
           </p>
-          <div className="activity-areas__info activity-areas__info--inverted">
-            <p className="activity-areas__text">
-              <span className="activity-areas__text--bold">Empresas Strong-up</span>: Apoiamos negócios desde a sua fundação, expansão, M&A, rodadas de investimento e em toda a sua jornada.
+          <div className="activity-areas__text">
+            <p className="section__description section__description--small">
+              <span className="section__description--bold">Empresas Strong-up</span>: Apoiamos negócios desde a sua fundação, expansão, M&A, rodadas de investimento e em toda a sua jornada.
             </p>
-            <p className="activity-areas__text">
+            <p className="section__description section__description--small">
               Nossa missão é criar as condições para que sua empresa possa se desenvolver sobre uma base sólida, <span className="activity-areas__text--bold">porque &quot;Start&quot; é só o primeiro passo.</span> 
             </p>
           </div>

@@ -2,7 +2,7 @@
   background-color: #fff;
   display: flex;
   justify-content: center;
-
+  
   &__content {
     max-width: 1440px;
     width: 100%;
@@ -20,52 +20,17 @@
     }
   }
 
-  &__title {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 120%;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0px 0px 24px;
-
-    @media (max-width: 1280px) {
-      font-size: 12px;
-    }
-  }
-
   &__description {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 160%;
     max-width: 720px;
+    gap: 24px;
     margin: 0px 0px 56px;
-    text-align: center;
-
-    @media (max-width: 1280px) {
-      font-size: 16px;
-    }
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: 768px) {
       max-width: 100%;
       margin: 0px 0px 32px;
-    }
-
-    &--big {
-      font-size: 36px;
-      font-weight: 600;
-      margin: 0px 0px 16px;
-      line-height: 100%;
-      margin: 0px 0px 24px;
-
-      @media (max-width: 1280px) {
-        font-size: 24px;
-      }
+      gap: 16px;
     }
   }
 
@@ -135,7 +100,7 @@
 
   &__item-number {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 120%;
     letter-spacing: 0%;
     margin: 0px 0px 24px;
@@ -147,13 +112,13 @@
     line-height: 120%;
     margin: 0px;
     letter-spacing: 0%;
-    min-height: 48px;
+    min-height: 64px;
     flex-shrink: 0;
   }
 
   &__item-content {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 112%;
     margin-bottom: 24px;
 
@@ -166,7 +131,7 @@
 
   &__item-button {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 120%;
     color: #F1563A;
     background-color: transparent;

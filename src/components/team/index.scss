@@ -2,7 +2,7 @@
   background-color: #F1553A;
   display: flex;
   justify-content: center;
-
+  
   &__content {
     max-width: 1440px;
     width: 100%;
@@ -17,39 +17,9 @@
     }
   }
 
-  &__title {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 120%;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-transform: uppercase;
-    margin: 0px 0px 24px;
-
-
-    @media (max-width: 1280px) {
-      font-size: 12px;
-    }
-
-    @media (max-width: 768px) {
-      margin: 0px 0px 16px;
-    }
-  }
-
   &__description {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 120%;
     max-width: 480px;
     margin: 0px 0px 48px;
-
-
-    @media (max-width: 1280px) {
-      font-size: 16px;
-    }
 
     @media (max-width: 768px) {
       margin: 0px 0px 24px;

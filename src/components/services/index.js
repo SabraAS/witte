@@ -207,15 +207,17 @@ const Services = ({ isMobile }) => {
   };
 
   return (
-    <section className="services" id="servicos">
+    <section className="services section" id="servicos">
       <div className="services__content">
-        <h3 className="services__title">Serviços</h3>
-        <p className="services__description services__description--big">
-          Temos uma solução para cada momento da jornada da sua empresa
-        </p>
-        <p className="services__description">
-          Empresas Strong-up: Apoiamos negócios desde a sua fundação, expansão, M&A, rodadas de investimento e em toda a sua jornada. Nossa missão é criar as condições para que sua empresa possa se desenvolver sobre uma base sólida, porque &quot;Start&quot; é só o primeiro passo. 
-        </p>
+        <h3 className="section__title">Serviços</h3>
+        <div className="services__description">
+          <p className="section__description section__description--align-center">
+            Temos uma solução para cada momento da jornada da sua empresa
+          </p>
+          <p className="section__description section__description--small section__description--align-center">
+            Empresas Strong-up: Apoiamos negócios desde a sua fundação, expansão, M&A, rodadas de investimento e em toda a sua jornada. Nossa missão é criar as condições para que sua empresa possa se desenvolver sobre uma base sólida, porque &quot;Start&quot; é só o primeiro passo. 
+          </p>
+        </div>
         <div className="services__all-items">
           {activeService !== null && !isMobile && 
             <div className={'services__item services__item--active services__item--desktop'}>

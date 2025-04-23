@@ -2,7 +2,7 @@
   background-color: #491246;
   display: flex;
   justify-content: center;
-
+  
   &__content {
     max-width: 1440px;
     width: 100%;
@@ -50,16 +50,7 @@
     cursor: pointer;
   }
 
-  &__content {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 80px;
-  }
-
   &__text {
-    font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
