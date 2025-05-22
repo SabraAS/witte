@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from 'next/script';
 import Navbar from '../components/navbar';
 import Hero from '../components/hero';
 import ActivityAreas from '../components/activityAreas';
@@ -9,6 +10,7 @@ import Contact from '../components/contact';
 import Footer from '../components/footer';
 import { useState, useEffect } from 'react';
 import { Sora, DM_Sans } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const sora = Sora({
   variable: "--font-sora",
@@ -19,7 +21,6 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
 });
-
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -47,13 +48,15 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <html lang="pt-BR">
       <Head>
         <link rel="icon" href="/LOGO.svg" />
         <title>Witte Advogados</title>
         <meta name="color-scheme" content="only light" />
       </Head>
-      <div className={`home ${sora.variable} ${dmSans.variable}`}>
+
+      <body>
+        <div id="home" className={`home ${sora.variable} ${dmSans.variable}`}>
         <Navbar isMobile={isMobile} />
         <main>
           <Hero />
@@ -64,7 +67,9 @@ export default function Home() {
           <Contact />
         </main>
         <Footer />
-      </div>
-    </>
+        </div>
+      </body>
+      <GoogleAnalytics gaId="G-BETTK3N8PS" />
+    </html>
   );
 };

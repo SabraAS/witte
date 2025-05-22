@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from 'next/image';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const mainClients = [
   {
@@ -403,7 +404,12 @@ const Clients = ({ isMobile }) => {
         </p>
         <div className="clients__items">
           {mainClients.map((client) => (
-            <Image className="clients__image" key={client.name} fill src={client.logo} alt={client.name} onClick={() => {
+            <Image className="clients__image" key={client.name} fill src={client.logo} alt={client.name}
+            onClick={() => {
+              sendGAEvent('clients_click', {
+                client_name: client.name,
+                client_url: client.url,
+              });
                 window.open(client.url, '_blank');
               }} />
           ))}
@@ -451,7 +457,10 @@ const Clients = ({ isMobile }) => {
             </div>
           </div>
         )}
-        <button className="clients__button" onClick={() => setShowMoreClients(!showMoreClients)}>{showMoreClients ? "Ver menos" : "Conheça"}</button>
+        <button className="clients__button" onClick={() => {
+          sendGAEvent('clients_more_clients_button_click');
+          setShowMoreClients(!showMoreClients);
+        }}>{showMoreClients ? "Ver menos" : "Conheça"}</button>
       </div>
     </section>
   );

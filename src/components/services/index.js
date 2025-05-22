@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendGAEvent } from '@next/third-parties/google';
 
 const servicos = [
   {
@@ -229,7 +230,10 @@ const Services = ({ isMobile }) => {
                   <p key={index}>{extra}</p>
                 ))}
               </div>
-              <button className={'services__item-button'} onClick={() => setActiveService(null)}>Ver todos os serviços</button>
+              <button className={'services__item-button'} onClick={() => {
+                sendGAEvent('services_ver_todos_servicos_button_click');
+                setActiveService(null);
+              }}>Ver todos os serviços</button>
             </div>
           }
 
@@ -242,7 +246,10 @@ const Services = ({ isMobile }) => {
                 <button
                   className={`services__item-button ${activeService === index ? 'services__item-button--less' : ''}`}
                   disabled={activeService === index && !isMobile}
-                  onClick={() => handleServiceClick(index)}
+                  onClick={() => {
+                    sendGAEvent('services_saiba_mais_button_click');
+                    handleServiceClick(index);
+                  }}
                 >
                   {isMobile && activeService !== null && activeService === index ? 'Saiba menos' : 'Saiba mais'}
                 </button>

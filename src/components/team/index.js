@@ -1,6 +1,8 @@
 import TeamMember from "../teamMember";
 import Image from 'next/image';
 import { useState, useEffect } from "react";
+import { sendGAEvent } from '@next/third-parties/google';
+
 const mainMembers = [
   {
     img: '/Natalie.png',
@@ -119,7 +121,10 @@ const Team = ({ isMobile }) => {
                     <button
                     className="team__carousel-button team__carousel-button--previous"
                     type="button"
-                    onClick={() => setFirstPosition(firstPosition - 1)}>
+                    onClick={() => {
+                      sendGAEvent('team_carousel_previous_button_click');
+                      setFirstPosition(firstPosition - 1);
+                    }}>
                       <Image fill src={'/arrow-left.svg'} alt="voltar" />
                     </button>
                   }
@@ -132,7 +137,10 @@ const Team = ({ isMobile }) => {
                     <button
                     className="team__carousel-button"
                     type="button"
-                    onClick={() => setFirstPosition(firstPosition + 1)}>
+                    onClick={() => {
+                      sendGAEvent('team_carousel_next_button_click');
+                      setFirstPosition(firstPosition + 1);
+                    }}>
                       <Image fill src={'/arrow-right.svg'} alt="avançar" />
                     </button>
                   }

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const Footer = () => {
   return (
@@ -7,8 +8,14 @@ const Footer = () => {
         <div>
           <Image fill src="/logo-orange.svg" className="footer__logo" alt="witte logo" />
           <div className="footer__socials">
-            <Image fill className="footer__icon" src="/linkedin.svg" alt="Linkedin logo" onClick={() => window.open('https://www.linkedin.com/company/witte-advogados/', '_blank')} />
-            <Image fill className="footer__icon" src="/email.svg" alt="email logo" onClick={() => window.open('mailto:contato@witteadv.com.br', '_blank')} />
+            <Image fill className="footer__icon" src="/linkedin.svg" alt="Linkedin logo" onClick={() => {
+              sendGAEvent('footer_linkedin_click');
+              window.open('https://www.linkedin.com/company/witte-advogados/', '_blank');
+            }} />
+            <Image fill className="footer__icon" src="/email.svg" alt="email logo" onClick={() => {
+              sendGAEvent('footer_email_click');
+              window.open('mailto:contato@witteadv.com.br', '_blank');
+            }} />
           </div>
         </div>
         <p className="footer__text">
