@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const Hero = () => {
   return (
@@ -13,7 +14,10 @@ const Hero = () => {
               <span>Apoiamos seu negócio de tecnologia desde </span>
               <span>o primeiro contrato e até o exit</span>
             </p>
-            <button className="hero__button" onClick={() => window.location.href = '#servicos'}>Conheça</button>
+            <button className="hero__button" onClick={() => {
+              sendGAEvent('hero_conheca_button_click');
+              window.location.href = '#servicos';
+            }}>Conheça</button>
           </div>
 
           <div className="hero__awards hero__awards--desktop">
@@ -21,11 +25,17 @@ const Hero = () => {
                 <p>Nossos prêmios</p>
                 <div className="hero__awards-items">
                 <div className="hero__awards-item">
-                  <Image fill src={"/lavca.png"} alt="prêmio lavca" onClick={() => window.open('https://www.lavca.org/women/#', '_blank')} />
+                  <Image fill src={"/lavca.png"} alt="prêmio lavca" onClick={() => {
+                    sendGAEvent('hero_lavca_click');
+                    window.open('https://www.lavca.org/women/#', '_blank');
+                  }} />
 
                 </div>
                 <div className="hero__awards-item">
-                  <Image fill src={"/startup.png"} alt="prêmio startup awars 2016" onClick={() => window.open('https://revistapegn.globo.com/Startups/noticia/2016/11/meliuz-ganha-premio-startup-awards-no-case-2016.html', '_blank')} />
+                  <Image fill src={"/startup.png"} alt="prêmio startup awars 2016" onClick={() => {
+                    sendGAEvent('hero_startup_click');
+                    window.open('https://revistapegn.globo.com/Startups/noticia/2016/11/meliuz-ganha-premio-startup-awards-no-case-2016.html', '_blank');
+                  }} />
                 </div>
               </div>
             </div>
@@ -33,10 +43,16 @@ const Hero = () => {
               <p>Livros publicados</p>
               <div className="hero__awards-items">
                 <div className="hero__awards-item">
-                  <Image fill src={"/mulheres.png"} alt="mulheres na tecnologia" onClick={() => window.open('https://a.co/d/fMG1VQ1', '_blank')} />
+                  <Image fill src={"/mulheres.png"} alt="mulheres na tecnologia" onClick={() => {
+                    sendGAEvent('hero_mulheres_click');
+                    window.open('https://a.co/d/fMG1VQ1', '_blank');
+                  }} />
                 </div>
                 <div className="hero__awards-item">
-                  <Image fill src={"/direito.png"} alt="direito das startups" onClick={() => window.open('https://a.co/d/aNyYexX', '_blank')} />
+                  <Image fill src={"/direito.png"} alt="direito das startups" onClick={() => {
+                    sendGAEvent('hero_direito_click');
+                    window.open('https://a.co/d/aNyYexX', '_blank');
+                  }} />
                 </div>
               </div>
             </div>
@@ -48,16 +64,28 @@ const Hero = () => {
             <p>Nossos prêmios & Livros publicados</p>
             <div className="hero__awards-items">
               <div className="hero__awards-item">
-                <Image fill src={"/lavca.png"} alt="prêmio lavca" onClick={() => window.open('https://www.lavca.org/women/#', '_blank')} />
+                <Image fill src={"/lavca.png"} alt="prêmio lavca" onClick={() => {
+                  sendGAEvent('hero_lavca_click');
+                  window.open('https://www.lavca.org/women/#', '_blank');
+                }} />
               </div>
               <div className="hero__awards-item">
-                <Image fill src={"/startup.png"} alt="prêmio startup awars 2016" onClick={() => window.open('https://revistapegn.globo.com/Startups/noticia/2016/11/meliuz-ganha-premio-startup-awards-no-case-2016.html', '_blank')} />
+                <Image fill src={"/startup.png"} alt="prêmio startup awars 2016" onClick={() => {
+                  sendGAEvent('hero_startup_click');
+                  window.open('https://revistapegn.globo.com/Startups/noticia/2016/11/meliuz-ganha-premio-startup-awards-no-case-2016.html', '_blank');
+                }} />
               </div>
               <div className="hero__awards-item">
-                <Image fill src={"/mulheres.png"} alt="mulheres na tecnologia" onClick={() => window.open('https://a.co/d/fMG1VQ1', '_blank')} />
+                <Image fill src={"/mulheres.png"} alt="mulheres na tecnologia" onClick={() => {
+                  sendGAEvent('hero_mulheres_click');
+                  window.open('https://a.co/d/fMG1VQ1', '_blank');
+                }} />
               </div>
               <div className="hero__awards-item">
-                <Image fill src={"/direito.png"} alt="direito das startups" onClick={() => window.open('https://a.co/d/aNyYexX', '_blank')} />
+                <Image fill src={"/direito.png"} alt="direito das startups" onClick={() => {
+                  sendGAEvent('hero_direito_click');
+                  window.open('https://a.co/d/aNyYexX', '_blank');
+                }} />
               </div>
             </div>
           </div>

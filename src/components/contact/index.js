@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const Contact = () => {
   return (
@@ -11,11 +12,17 @@ const Contact = () => {
           </p>
         </div>
         <div className="contact__items">
-          <div className="contact__item" onClick={() => window.open('https://www.linkedin.com/company/witte-advogados/', '_blank')}>
+          <div className="contact__item" onClick={() => {
+            sendGAEvent('contact_linkedin_click');
+            window.open('https://www.linkedin.com/company/witte-advogados/', '_blank');
+          }}>
             <Image fill src="/linkedin.svg" alt="Linkedin logo" />
             <p>Linkedin</p>
           </div>
-          <div className="contact__item" onClick={() => window.open('mailto:contato@witteadv.com.br', '_blank')}>
+          <div className="contact__item" onClick={() => {
+            sendGAEvent('contact_email_click');
+            window.open('mailto:contato@witteadv.com.br', '_blank');
+          }}>
             <Image fill src="/email.svg" alt="email logo" />
             <p>contato@witteadv.com.br</p>
           </div>

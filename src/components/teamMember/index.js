@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { useState } from "react";
+import { sendGAEvent } from '@next/third-parties/google';
+
 const TeamMember = ({ img, name, description, text, linkedin, site, invert, setShowMore, fullScreen, isMobile, showAllSocials }) => {
   const [showMoreMobile, setShowMoreMobile] = useState(false);
 
@@ -37,7 +39,10 @@ const TeamMember = ({ img, name, description, text, linkedin, site, invert, setS
           </>
           :
           <>
-            <button className="team-member__social team-member__social--more" onClick={handleShowMore}>{isMobile ? (showMoreMobile ? 'Saiba menos' : 'Saiba mais') : <a href="#equipe">Saiba mais</a>}</button>
+            <button className="team-member__social team-member__social--more" onClick={() => {
+              sendGAEvent('team_member_saiba_mais_button_click');
+              handleShowMore();
+            }}>{isMobile ? (showMoreMobile ? 'Saiba menos' : 'Saiba mais') : <a href="#equipe">Saiba mais</a>}</button>
             <a className="team-member__social team-member__social--linkedin" href={linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
@@ -51,7 +56,10 @@ const TeamMember = ({ img, name, description, text, linkedin, site, invert, setS
         </div>
 
         {fullScreen &&
-          <button className="team-member__close" onClick={() => setShowMore()}>
+          <button className="team-member__close" onClick={() => {
+            sendGAEvent('team_member_voltar_button_click');
+            setShowMore();
+          }}>
             <Image fill src={'/arrow-left.svg'} alt="voltar" /> Voltar
           </button>
         }
